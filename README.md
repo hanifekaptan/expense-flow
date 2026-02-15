@@ -11,6 +11,8 @@
 
 ExpenseFlow, gelişmiş yapay zeka mühendisliği konseptlerini sergilemek amacıyla geliştirilmiş **çok ajanlı bir harcama takip ve analiz sistemidir**. Sistem, kapsamlı bütçe analizleri sunmak için birlikte çalışan **4 uzman yapay zeka ajanından** oluşur.
 
+**Ayrıntılı doküman:** https://hanifekaptan.github.io/expense-flow/
+
 ### Ana Özellikler
 
 - ✅ **Çok Ajanlı Mimari**: Her biri özel bir göreve odaklanmış 4 ajan (Sınıflandırıcı, Araştırmacı, Analist, Stratejist).
