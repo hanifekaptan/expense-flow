@@ -2,7 +2,7 @@
 
 > Akıllı model seçimi ve 4 uzman ajan ile yapay zeka destekli bütçe analizi. Bu proje, Y-İnovasyon İleri Seviye Case Study 2 için geliştirilmiştir.
 
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.9+](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110.0-009688.svg)](https://fastapi.tiangolo.com)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.31.0-FF4B4B.svg)](https://streamlit.io)
 [![Ollama](https://img.shields.io/badge/Ollama-Llama3-black.svg)](https://ollama.ai)
@@ -92,13 +92,11 @@ def select_model_for_task(task_type: str) -> str:
 
 ### Ön Gereksinimler
 
-1.  **Python 3.9+**
+1.  **Python 3.11**
 2.  **Ollama**'nın kurulu ve çalışır durumda olması.
 3.  Gerekli modellerin indirilmesi:
     ```bash
-    ollama pull llama3:8b
-    ollama pull llama3:70b 
-    # Not: Projedeki config dosyasından model adlarını kendi indirdiğiniz modellerle güncelleyebilirsiniz.
+    ollama pull llama3:3b
     ```
 
 ### Kurulum
