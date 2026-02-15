@@ -1,0 +1,128 @@
+site_name: ExpenseFlow Documentation
+site_description: Multi-Agent Expense Analysis System - Complete Documentation
+site_author: Hanife Kaptan
+site_url: https://hanifekaptan.github.io/expense-flow
+
+# Repository
+repo_name: expense-flow
+repo_url: https://github.com/hanifekaptan/expense-flow
+
+# Copyright
+copyright: Copyright &copy; 2026 - ExpenseFlow Project
+
+# Theme Configuration
+theme:
+  name: material
+  language: en
+  palette:
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  font:
+    text: Roboto
+    code: Roboto Mono
+  
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  
+  icon:
+    repo: fontawesome/brands/github
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: hanifekaptan
+      repo: expense-flow
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-\.]+'
+
+# Navigation Structure
+nav:
+  - Home:
+    - Overview: index.md
+  - Architecture:
+    - System Design: architecture.md
+    - Model Selection: model-selection.md
+  - Components:
+    - AI Agents: agents.md
+    - REST API: api.md
+
+# Extra Configuration
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hanifekaptan
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/hanifekaptan
+  
+  version:
+    provider: mike
+
+# Extra CSS (optional)
+# extra_css:
+#   - stylesheets/extra.css
+
+# Extra JavaScript (optional)
+# extra_javascript:
+#   - javascripts/extra.js
