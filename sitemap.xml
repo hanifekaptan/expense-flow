@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://hanifekaptan.github.io/expense-flow/</loc>
+         <lastmod>2026-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hanifekaptan.github.io/expense-flow/agents/</loc>
+         <lastmod>2026-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hanifekaptan.github.io/expense-flow/api/</loc>
+         <lastmod>2026-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hanifekaptan.github.io/expense-flow/architecture/</loc>
+         <lastmod>2026-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hanifekaptan.github.io/expense-flow/model-selection/</loc>
+         <lastmod>2026-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+</urlset>
