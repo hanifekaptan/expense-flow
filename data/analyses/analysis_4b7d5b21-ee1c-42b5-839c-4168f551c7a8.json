@@ -1,0 +1,18 @@
+{
+  "id": "4b7d5b21-ee1c-42b5-839c-4168f551c7a8",
+  "total_expenses": 400.0,
+  "daily_rate": 57.142857142857146,
+  "monthly_projection": 1714.2857142857144,
+  "days_analyzed": 7,
+  "category_breakdown": {
+    "EDUCATION": 400.0
+  },
+  "budget_status": "HEALTHY",
+  "income": 15000.0,
+  "remaining_budget": 13285.714285714286,
+  "usage_percentage": 11.428571428571429,
+  "trends": [
+    "📚 EDUCATION harcamaları yüksek (400 TL, %100.0)"
+  ],
+  "created_at": "2026-02-11T15:38:13.538774"
+}

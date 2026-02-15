@@ -1,0 +1,21 @@
+{
+  "id": "9929484b-5f2a-4627-a13e-5e8742486dce",
+  "total_expenses": 12759.0,
+  "daily_rate": 1822.7142857142858,
+  "monthly_projection": 54681.42857142857,
+  "days_analyzed": 7,
+  "category_breakdown": {
+    "HOUSING": 8500.0,
+    "UTILITIES": 2049.0,
+    "FOOD": 1790.0,
+    "HEALTH": 420.0
+  },
+  "budget_status": "OVER_BUDGET",
+  "income": 15000.0,
+  "remaining_budget": 0,
+  "usage_percentage": 364.54285714285714,
+  "trends": [
+    "🏠 HOUSING harcamaları yüksek (8500 TL, %66.6)"
+  ],
+  "created_at": "2026-02-13T22:19:37.136082"
+}

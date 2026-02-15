@@ -1,0 +1,18 @@
+{
+  "id": "338d38ad-4e2c-4ea7-a85f-d4a0600d950c",
+  "total_expenses": 8500.0,
+  "daily_rate": 1214.2857142857142,
+  "monthly_projection": 36428.57142857143,
+  "days_analyzed": 7,
+  "category_breakdown": {
+    "UTILITIES": 8500.0
+  },
+  "budget_status": "OVER_BUDGET",
+  "income": 15000.0,
+  "remaining_budget": 0,
+  "usage_percentage": 242.85714285714283,
+  "trends": [
+    "💡 UTILITIES harcamaları yüksek (8500 TL, %100.0)"
+  ],
+  "created_at": "2026-02-11T18:09:02.177026"
+}

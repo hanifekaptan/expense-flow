@@ -1,0 +1,188 @@
+[
+  {
+    "id": "cb3e4a31-e7e5-4589-93ee-5e64fc48bac6",
+    "description": "starbucks latte",
+    "amount": 0.0,
+    "category": "FOOD",
+    "date": "2026-02-13T22:35:30.302228",
+    "metadata": {
+      "search_results": [
+        {
+          "title": "Güncel Starbucks Kahve Fiyatları, Menü ve Fiyat Listesi (2026) - Yemek.com",
+          "link": "https://yemek.com/starbucks-kahve-fiyatlari/",
+          "snippet": "January 2, 2026 - Starbucks kahve fiyatları nasıl, en son zamlı fiyat listesi nedir, Starbucks menüsünde neler var gibi soruların cevapları burada."
+        },
+        {
+          "title": "Starbucks Fiyatları 2025 (4 Haziran Starbucks Kahve Fiyatı) - Karekod Blog",
+          "link": "https://www.karekod.org/blog/starbucks-fiyatlari-2022/",
+          "snippet": "June 21, 2025 - Starbucks Filtre Kahve fiyatı: 74,00 TL, Caffé Americano fiyatı: 81,00 TL, Caffé Latte fiyatı: 93,00 TL ve Starbucks Vanilla Latte fiyatı: 93,00 TL ’dir."
+        },
+        {
+          "title": "Starbucks Hazır Kahve Fiyatları | En Ucuzu Akakçe",
+          "link": "https://www.akakce.com/hazir-kahve/starbucks.html",
+          "snippet": "Starbucks Premium Caffe Latte 18 gr En Ucuz 19,95 TL TEK FİYAT 19,95 TL /adet"
+        }
+      ],
+      "searched": true
+    }
+  },
+  {
+    "id": "5c7d560e-e09d-45a5-bbcf-0670255f1367",
+    "description": "migros market alışverişi",
+    "amount": 280.0,
+    "category": "FOOD",
+    "date": "2026-02-13T22:35:30.302288",
+    "metadata": {
+      "search_results": [
+        {
+          "title": "Migros Sanal Market | Online Market Alışverişi",
+          "link": "https://www.migros.com.tr/",
+          "snippet": "Taze meyve, sebze, gıda ve temel ihtiyaçlarınız Migros Sanal Market'te! Hemen sipariş verin, kapınıza gelsin."
+        },
+        {
+          "title": "Migros Market Fiyatları ve Ürünleri - Güncel Fiyat",
+          "link": "https://marketfiyati.net/migros-market-fiyatlari/",
+          "snippet": "Bu kategorimizden Migros Market Fiyatları, Migros ürün fiyatlarına ulaşabilir bilgi alabilirsiniz. Migros Market Fiyatını inceleyebilmeniz adına güncel ve doğru Migros Market ürün fiyatlarını bu bölümde yayınlamaktayız."
+        },
+        {
+          "title": "Market Fiyatı",
+          "link": "https://marketfiyati.org.tr/",
+          "snippet": "Fiyatları Karşılaştır En İyi Fiyat ı Yakala! Farklı marketlerin fiyatlarını tek bir platformda görün ve karşılaştırın. Marketlerdeki en uygun fiyatlı ürünleri öğrenin ve en hesaplı listeyi oluşturun. En yakın marketten en uygun fiyata alışveriş yapmak artık çok kolay."
+        }
+      ],
+      "searched": true
+    }
+  },
+  {
+    "id": "0f87bee8-0765-4c7c-9489-9d630b9766ef",
+    "description": "ders kitabı matematik",
+    "amount": 450.0,
+    "category": "EDUCATION",
+    "date": "2026-02-13T22:35:30.302288",
+    "metadata": {
+      "search_results": [
+        {
+          "title": "Matematik Ders Kitabı & Matematik Çalışma Kitabı Fiyatları | En Ucuzu Akakçe",
+          "link": "https://www.akakce.com/yardimci-ders-kitaplari/matematik.html",
+          "snippet": "Tonguç Akademi 4. Sınıf Tüm Dersler Zoru Bankası 340,50 TL En ucuz fiyat 114 satıcı Karşılaştır Tonguç Akademi Taktikli 4. Sınıf Soru Bankası 215,20 TL En ucuz fiyat 86 satıcı · Akakçe'de alışverişçilerin en çok satın ..."
+        },
+        {
+          "title": "Matematik Ders Kitapları Fiyatları",
+          "link": "https://www.cimri.com/matematik-ders-kitaplari",
+          "snippet": "Matematik Ders Kitapları Fiyatları - Matematik Ders Kitapları Özellikleri ve Modelleri Cimri'de! Matematik Ders Kitapları En Ucuz fiyat avantajı ve indirim seçenekleri Cimri.com'da"
+        },
+        {
+          "title": "11. Sınıf Matbook Video Ders Kitabı - Rehber Matematik Fiyatları",
+          "link": "https://www.cimri.com/matematik/en-ucuz-11-sinif-matbook-video-ders-kitabi-rehber-matematik-fiyatlari,2092404500",
+          "snippet": "Sınıf Matbook Video Ders Kitabı - Rehber Matematik ürününün özellikleri ve fiyat teklifleri Cimri'de. 11. Sınıf Matbook Video Ders Kitabı - Rehber Matematik ürününün 5 farklı mağaza içerisinden en ucuz teklifi 272.92 'dir."
+        }
+      ],
+      "searched": true
+    }
+  },
+  {
+    "id": "7777ccc2-f2ba-47fa-90f2-4435fd52748e",
+    "description": "kampüste öğle yemeği",
+    "amount": 75.0,
+    "category": "FOOD",
+    "date": "2026-02-13T22:35:31.208991",
+    "metadata": {}
+  },
+  {
+    "id": "7a4fa39b-dacd-4374-909e-ba0cf9e7bde9",
+    "description": "netflix aboneliği",
+    "amount": 149.99,
+    "category": "ENTERTAINMENT",
+    "date": "2026-02-13T22:35:31.208991",
+    "metadata": {
+      "search_results": [
+        {
+          "title": "Netflix Abonelik Paketleri ve Fiyatları Ne Kadar? - 2025",
+          "link": "https://www.webtekno.com/netflix-uyelik-ucretleri-h87227.html",
+          "snippet": "Oct 7, 2025 · Dünyanın en büyük film ve dizi platformu Netflix'in Türkiye fiyatları ne kadar? İşte Netflix tarafından ülkemizde sunulan güncel abonelik planları, özellikler ve fiyatlar ."
+        },
+        {
+          "title": "Netflix 2026 Abonelik Fiyatları & Paket Karşılaştırması",
+          "link": "https://webhakim.com/netflix-uyelik-ucreti.html",
+          "snippet": "Dec 7, 2025 · 2026 Netflix Türkiye fiyatları ne? Temel, Standart ve Premium (Aile/Premium) paketleri, avantajları ve en uygun seçim rehberi bu yazıda."
+        },
+        {
+          "title": "Plans and Pricing | Netflix Help Center",
+          "link": "https://help.netflix.com/en/node/24926",
+          "snippet": "Discover the different streaming plans Netflix offers and how much Netflix costs."
+        }
+      ],
+      "searched": true
+    }
+  },
+  {
+    "id": "6f2d1667-56b4-4afa-9f93-745e62834845",
+    "description": "spotify premium",
+    "amount": 54.99,
+    "category": "ENTERTAINMENT",
+    "date": "2026-02-13T22:35:31.208991",
+    "metadata": {}
+  },
+  {
+    "id": "190ad1b2-0b1d-4387-a345-93ff37896ebb",
+    "description": "uber kampüse gidiş",
+    "amount": 95.0,
+    "category": "TRANSPORT",
+    "date": "2026-02-13T22:35:31.208991",
+    "metadata": {}
+  },
+  {
+    "id": "4fc92762-7cc8-4dcb-accc-0dc284652eeb",
+    "description": "teknosa kulaklık",
+    "amount": 899.0,
+    "category": "SHOPPING",
+    "date": "2026-02-13T22:35:31.208991",
+    "metadata": {
+      "search_results": [
+        {
+          "title": "Kulaklık Fiyatları ve Aksesuarları - Teknosa",
+          "link": "https://www.teknosa.com/kulaklik-c-100006",
+          "snippet": "Siz de kablolu kulaklık fiyatları ve kablosuz kulaklık fiyatları hakkında bilgi edinmek, kulaklık modellerinin özelliklerini incelemek, seçtiğiniz kulaklık modelini hızlı ve güvenli ödeme yöntemlerinden faydalanarak satın almak için Teknosa online alışveriş sitesini ziyaret edebilirsiniz."
+        },
+        {
+          "title": "Kulaklık Teknosa Fiyatları ve Modelleri | Hepsiburada",
+          "link": "https://www.hepsiburada.com/kulaklik-teknosa-x-s11531",
+          "snippet": "kulaklık teknosa kaliteli modeller, uygun fiyatlar, hızlı kargo garantisi ve Hepsiburada güvencesiyle seni bekliyor! Bluetooth Kulaklıklar kategorisine göz atmayı unutma."
+        },
+        {
+          "title": "Kulaklık Fiyatları ve Modelleri - Kablosuz Kulaklık - Teknosa",
+          "link": "https://www.teknosa.com/kulakliklar-c-100003",
+          "snippet": "Kulaklık fiyat ve modelleri Teknosa'da! Aradığınız kulaklık modellerini en uygun fiyat ve ürün garantisi ile Teknosa Mağazaları ve teknosa .com'da bulabilirsiniz!"
+        }
+      ],
+      "searched": true
+    }
+  },
+  {
+    "id": "7273db9b-82e6-4b99-8c69-628e3934f40b",
+    "description": "dominos pizza",
+    "amount": 320.0,
+    "category": "FOOD",
+    "date": "2026-02-13T22:35:31.208991",
+    "metadata": {
+      "search_results": [
+        {
+          "title": "Domino’s Pizza",
+          "link": "https://www.dominospizzanc.com/menu.php",
+          "snippet": "... Important notice: By deleting your account we also have to delete your coupons & gifts, your delivery addresses and your favorites pizzas and orders."
+        },
+        {
+          "title": "Domino’s Pizza",
+          "link": "https://www.dominospizzanc.com/terms",
+          "snippet": "... Important notice: By deleting your account we also have to delete your coupons & gifts, your delivery addresses and your favorites pizzas and orders."
+        },
+        {
+          "title": "Domino’s Pizza",
+          "link": "https://www.dominospizzanc.com/contact",
+          "snippet": "... Important notice: By deleting your account we also have to delete your coupons & gifts, your delivery addresses and your favorites pizzas and orders."
+        }
+      ],
+      "searched": true
+    }
+  }
+]
