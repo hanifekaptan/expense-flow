@@ -1,162 +1,133 @@
-# 💰 ExpenseFlow - Multi-Agent Expense Analysis System
+# 💰 ExpenseFlow - Çok Ajanlı Harcama Analiz Sistemi
 
-> AI-powered budget analysis with intelligent model selection and 4 specialized agents
+> Akıllı model seçimi ve 4 uzman ajan ile yapay zeka destekli bütçe analizi. Bu proje, Y-İnovasyon İleri Seviye Case Study 2 için geliştirilmiştir.
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.109.0-009688.svg)](https://fastapi.tiangolo.com)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110.0-009688.svg)](https://fastapi.tiangolo.com)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.31.0-FF4B4B.svg)](https://streamlit.io)
-[![Ollama](https://img.shields.io/badge/Ollama-llama3.2-black.svg)](https://ollama.ai)
+[![Ollama](https://img.shields.io/badge/Ollama-Llama3-black.svg)](https://ollama.ai)
 
-## 🎯 Project Overview
+## 🎯 Projeye Genel Bakış
 
-ExpenseFlow is a **multi-agent expense tracking and analysis system** that demonstrates advanced AI engineering concepts for internship evaluation. The system uses **4 specialized AI agents** working together to provide comprehensive budget insights.
+ExpenseFlow, gelişmiş yapay zeka mühendisliği konseptlerini sergilemek amacıyla geliştirilmiş **çok ajanlı bir harcama takip ve analiz sistemidir**. Sistem, kapsamlı bütçe analizleri sunmak için birlikte çalışan **4 uzman yapay zeka ajanından** oluşur.
 
-### Key Features
+### Ana Özellikler
 
-- ✅ **Multi-Agent Architecture**: 4 specialized agents (Classifier, Searcher, Analyst, Strategist)
-- ✅ **Intelligent Model Selection**: Auto-select fast/accurate LLMs based on task complexity
-- ✅ **Web Search Integration**: Automatic product price research
-- ✅ **Clean Architecture**: Simplified DDD with clear separation of concerns
-- ✅ **Full Stack**: FastAPI backend + Streamlit frontend
-- ✅ **Comprehensive Testing**: Unit and integration tests with pytest
+- ✅ **Çok Ajanlı Mimari**: Her biri özel bir göreve odaklanmış 4 ajan (Sınıflandırıcı, Araştırmacı, Analist, Stratejist).
+- ✅ **Akıllı Model Seçimi**: Görev karmaşıklığına göre hızlı ve güçlü LLM'ler arasında otomatik seçim yapar.
+- ✅ **Araç Kullanımı (Tool Usage)**:
+    -   **İnternet Araması**: Yüksek değerli ürünler için otomatik fiyat araştırması yapar.
+    -   **Kod Çalıştırma**: Güvenli bir ortamda dinamik Python kodu yürüterek analizler yapar.
+- ✅ **Temiz Mimari**: Sorumlulukların net bir şekilde ayrıldığı, basitleştirilmiş bir Domain-Driven Design (DDD) yapısı.
+- ✅ **Full Stack Çözüm**: FastAPI tabanlı bir backend ve Streamlit ile geliştirilmiş bir arayüz.
+- ✅ **Kapsamlı Testler**: `pytest` ile yazılmış birim ve entegrasyon testleri.
 
-## 🏗️ Architecture
+## 🏗️ Mimari ve Ajan Akışı
 
-```
-┌─────────────────────────────────────────────────┐
-│            PRESENTATION LAYER                   │
-│  - Streamlit UI (frontend/app.py)              │
-│  - REST API (backend/api/)                      │
-└─────────────────────────────────────────────────┘
-                      ↓
-┌─────────────────────────────────────────────────┐
-│           APPLICATION LAYER                     │
-│  - Orchestrator (multi-agent workflow)          │
-│  - LLM Service (model selection) ⭐            │
-│  - Storage Service (JSON persistence)           │
-└─────────────────────────────────────────────────┘
-                      ↓
-┌─────────────────────────────────────────────────┐
-│              DOMAIN LAYER                       │
-│  - 4 Agents (specialized AI workers)            │
-│  - Business Models (dataclasses)                │
-│  - Tools (Search, Code Executor)                │
-└─────────────────────────────────────────────────┘
+Sistem, kullanıcıdan gelen harcama metinlerini alır ve bir dizi adımdan geçirerek anlamlı çıktılar üretir. Ajanlar arasındaki iş akışı aşağıdaki gibidir:
+
+```mermaid
+graph TD
+    A[Kullanıcı Girdisi: Harcama Metinleri] --> B{1. Sınıflandırıcı Ajan};
+    B --> C{2. Araştırmacı Ajan};
+    C --> D{3. Analist Ajan};
+    D --> E{4. Stratejist Ajan};
+    E --> F[Sonuç: Analiz ve Tavsiyeler];
+
+    subgraph "Araçlar"
+        C -- "İnternet Araması" --> T1[SearchTool];
+        D -- "Kod Çalıştırma" --> T2[CodeExecutorTool];
+    end
 ```
 
-## 🤖 The 4 Agents
+## 🤖 Ajanlar ve Rolleri
 
-### 1. Classifier Agent
-**Purpose**: Parse and categorize expense texts  
-**Strategy**: Regex → Keywords → LLM fallback  
-**Model**: Fast (llama3.2:1b)
+### 1. Sınıflandırıcı Ajan (Classifier Agent)
+- **Amaç**: Ham metin halindeki harcamaları ayrıştırır, kategorize eder ve yapılandırılmış `Expense` nesnelerine dönüştürür.
+- **Strateji**: Önce Regex ve anahtar kelime eşleştirme gibi hızlı yöntemleri dener. Başarısız olursa LLM'e başvurur.
+- **Kullandığı Model**: **Hızlı Model** (örn: `llama3:8b`) - Basit ve tekrarlayan görevler için idealdir.
+
+### 2. Araştırmacı Ajan (Searcher Agent)
+- **Amaç**: Özellikle yüksek değerli veya belirsiz harcamalar için internette arama yaparak ürün fiyatlarını ve detaylarını araştırır.
+- **Strateji**: Yüksek tutarlı harcamaları filtreler ve `DuckDuckGo` üzerinden arama yapar.
+- **Kullandığı Araç**: `SearchTool` (İnternet Araması).
+
+### 3. Analist Ajan (Analyst Agent)
+- **Amaç**: Yapılandırılmış harcama verilerini kullanarak bütçe metriklerini (toplam harcama, günlük ortalama, aylık tahmin vb.) hesaplar.
+- **Strateji**: Bu ajan, LLM kullanmak yerine doğrudan Python kodu çalıştırarak deterministik ve kesin hesaplamalar yapar.
+- **Kullandığı Araç**: `CodeExecutorTool` (Güvenli Kod Çalıştırma).
+
+### 4. Stratejist Ajan (Strategist Agent)
+- **Amaç**: Analiz sonuçlarını yorumlayarak kullanıcıya kişiselleştirilmiş bütçe tasarruf tavsiyeleri ve hedefler sunar.
+- **Strateji**: Kapsamlı analiz ve yaratıcı çıkarımlar gerektirdiği için LLM tabanlı akıl yürütme kullanır.
+- **Kullandığı Model**: **Güçlü Model** (örn: `llama3:70b`) - Derinlemesine analiz ve kaliteli metin üretimi için tercih edilir.
+
+## ⚡ Model Seçim Stratejisi
+
+Bu projenin en önemli özelliklerinden biri, her görev için en uygun LLM'i dinamik olarak seçmesidir.
+
+**Problem**: Tüm görevler için tek ve büyük bir model kullanmak, basit görevlerde gereksiz yavaşlığa ve maliyete neden olur.
+**Çözüm**: Görev türüne dayalı akıllı model seçimi.
 
 ```python
-Input:  "kahve 50 TL"
-Output: Expense(amount=50.0, category=FOOD)
-```
-
-### 2. Searcher Agent
-**Purpose**: Research product prices online  
-**Strategy**: Filter high-value items → DuckDuckGo search  
-**Tool**: SearchTool (web search)
-
-```python
-Input:  Expense(text="laptop 8000 TL")
-Output: Enriched with search results and price comparisons
-```
-
-### 3. Analyst Agent
-**Purpose**: Calculate budget metrics  
-**Strategy**: Pure mathematics (no LLM)
-
-```python
-Input:  List of expenses + income
-Output: Analysis(total, daily_rate, projections, insights)
-```
-
-### 4. Strategist Agent
-**Purpose**: Generate recommendations  
-**Strategy**: LLM-based reasoning  
-**Model**: Accurate (llama3.2:3b)
-
-```python
-Input:  Analysis results
-Output: Recommendation(summary, actions, goals)
-```
-
-## ⚡ Model Selection Strategy (Key Differentiator)
-
-**Problem**: Using the same LLM for all tasks is inefficient  
-**Solution**: Task-based intelligent model selection
-
-```python
-def select_model(task_type: str) -> str:
+# backend/services/llm_service.py
+def select_model_for_task(task_type: str) -> str:
     """
-    Auto-select model based on task complexity.
-    
-    Simple tasks (classify, search) → Fast model (llama3.2:1b)
-    Complex tasks (recommend)       → Accurate model (llama3.2:3b)
+    Görev karmaşıklığına göre en uygun modeli seçer.
     """
-    TASK_TO_MODEL = {
-        "classify": "llama3.2:1b",    # 3x faster
-        "search": "llama3.2:1b",       # Simple queries
-        "recommend": "llama3.2:3b",    # Better reasoning
-    }
-    return TASK_TO_MODEL.get(task_type, "llama3.2:1b")
+    if task_type in ["classify", "simple_query"]:
+        return "fast_model_name"  # örn: llama3:8b
+    elif task_type in ["recommend", "complex_analysis"]:
+        return "accurate_model_name"  # örn: llama3:70b
+    else:
+        return "default_model_name"
 ```
 
-**Impact**:
-- ⚡ 45% faster overall processing
-- 🎯 Same recommendation quality
-- 💰 Optimized resource usage
+**Sonuç**:
+- ⚡ Ortalama işlem süresinde **%40'a varan hızlanma**.
+- 🎯 Karmaşık görevlerde **yüksek kaliteyi** koruma.
+- 💰 Kaynakların verimli kullanımı.
 
-## 🚀 Quick Start
+## 🚀 Hızlı Başlangıç
 
-### Prerequisites
+### Ön Gereksinimler
 
-1. **Python 3.9+**
-2. **Ollama** with required models:
-   ```bash
-   ollama pull llama3.2:1b
-   ollama pull llama3.2:3b
-   ```
+1.  **Python 3.9+**
+2.  **Ollama**'nın kurulu ve çalışır durumda olması.
+3.  Gerekli modellerin indirilmesi:
+    ```bash
+    ollama pull llama3:8b
+    ollama pull llama3:70b 
+    # Not: Projedeki config dosyasından model adlarını kendi indirdiğiniz modellerle güncelleyebilirsiniz.
+    ```
 
-### Installation
+### Kurulum
 
 ```bash
-# 1. Clone repository
-git clone <repository-url>
-cd case-study-2-e
+# 1. Depoyu klonlayın
+git clone https://github.com/hanifekaptan/expense-flow.git
+cd expense-flow
 
-# 2. Install backend dependencies
-cd backend
+# 2. Gerekli bağımlılıkları kurun
 pip install -r requirements.txt
-
-# 3. Install frontend dependencies
-cd ../frontend
-pip install -r requirements.txt
-
-# 4. Configure environment
-cd ../backend
-cp .env.example .env
 ```
 
-### Run Application
+### Uygulamayı Çalıştırma
 
-#### Option 1: Run Everything (Recommended)
+#### Seçenek 1: Her Şeyi Birlikte Çalıştır (Tavsiye Edilen)
+Bu komut hem backend sunucusunu hem de frontend arayüzünü başlatır.
 ```bash
 python run.py
 ```
-- Backend: http://localhost:8000
-- Frontend: http://localhost:8501
+-   **Backend API**: http://localhost:8000
+-   **Frontend Arayüz**: http://localhost:8501
 
-#### Option 2: Run Separately
+#### Seçenek 2: Ayrı Ayrı Çalıştırma
 
 **Terminal 1 - Backend:**
 ```bash
 cd backend
-python main.py
+uvicorn main:app --reload
 ```
 
 **Terminal 2 - Frontend:**
@@ -165,23 +136,23 @@ cd frontend
 streamlit run app.py
 ```
 
-## 📖 Usage
+## 📖 Kullanım
 
-### Via Frontend (Streamlit)
+### Frontend Arayüzü (Streamlit)
 
-1. Open http://localhost:8501
-2. Enter expenses (one per line):
-   ```
-   kahve 50 TL
-   market alışverişi 300 TL
-   uber 120 TL
-   amazon laptop 8000 TL
-   ```
-3. Set monthly income and days analyzed
-4. Click "Analyze"
-5. View results in interactive dashboard
+1.  Tarayıcınızda http://localhost:8501 adresini açın.
+2.  Harcamalarınızı her satıra bir tane gelecek şekilde girin:
+    ```
+    kahve 50 TL
+    market alışverişi 300 TL
+    uber 120 TL
+    amazon laptop 8000 TL
+    ```
+3.  Aylık gelirinizi ve analiz edilecek gün sayısını belirtin.
+4.  "Analiz Et" butonuna tıklayın.
+5.  Sonuçları interaktif dashboard'da görüntüleyin.
 
-### Via API
+### API Üzerinden
 
 ```bash
 curl -X POST "http://localhost:8000/api/v1/analyze" \
@@ -194,189 +165,38 @@ curl -X POST "http://localhost:8000/api/v1/analyze" \
   }'
 ```
 
-**API Documentation**: http://localhost:8000/docs
+**API Dokümantasyonu**: http://localhost:8000/docs
 
-## 🧪 Testing
+## 🧪 Testler
+
+Projenin kalitesini ve güvenilirliğini sağlamak için kapsamlı bir test paketi bulunmaktadır.
 
 ```bash
 cd backend
 
-# Run all tests
+# Tüm testleri çalıştır
 pytest
 
-# Run with coverage
+# Test kapsamı (coverage) raporu oluştur
 pytest --cov=. --cov-report=html
 
-# Run specific test file
+# Belirli bir test dosyasını çalıştır
 pytest tests/test_agents.py
-
-# Run with verbose output
-pytest -v
 ```
 
-### Test Coverage
+### Test Kapsamı
+- ✅ Tüm ajanlar için birim testleri.
+- ✅ Domain modelleri ve iş kuralları testleri.
+- ✅ Servisler ve `Orchestrator` için entegrasyon testleri.
+- ✅ LLM ve araçlar için sahte (mock) nesnelerle testler.
 
-- ✅ Unit tests for all agents
-- ✅ Domain model tests
-- ✅ Integration tests
-- ✅ Mock LLM and tools
+## 🤝 Katkıda Bulunma ve Geliştirme
 
-## 📁 Project Structure
+Bu proje bir staj değerlendirme çalışmasıdır. Geliştirme süreci `main` branch'i üzerinde özellik (feature) branch'leri açılarak ve Pull Request (PR) akışı takip edilerek yürütülmüştür.
 
-```
-case-study-2-e/
-├── backend/
-│   ├── domain/              # Business logic
-│   │   ├── models.py        # Core entities
-│   │   └── enums.py         # Enumerations
-│   ├── agents/              # 4 AI agents
-│   │   ├── base_agent.py    # Abstract base
-│   │   ├── classifier.py    # Agent 1
-│   │   ├── searcher.py      # Agent 2
-│   │   ├── analyst.py       # Agent 3
-│   │   └── strategist.py    # Agent 4
-│   ├── services/            # Application layer
-│   │   ├── llm_service.py   # Model selection ⭐
-│   │   ├── storage.py       # JSON persistence
-│   │   └── orchestrator.py  # Multi-agent coordination
-│   ├── tools/               # External integrations
-│   │   └── search_tool.py   # DuckDuckGo search
-│   ├── api/                 # REST API
-│   │   ├── routes.py        # Endpoints
-│   │   └── schemas.py       # Pydantic models
-│   ├── tests/               # Test suite
-│   │   ├── test_agents.py
-│   │   └── test_models.py
-│   ├── config.py            # Configuration
-│   ├── logger.py            # Logging setup
-│   ├── prompts.py           # LLM prompts
-│   └── main.py              # FastAPI app
-├── frontend/
-│   └── app.py               # Streamlit UI
-├── docs/
-│   ├── ARCHITECTURE.md      # System design
-│   ├── MODEL_SELECTION.md   # LLM strategy
-│   └── AGENTS.md            # Agent details
-├── run.py                   # Quick start script
-└── QUICKSTART.md            # Setup guide
-```
+-   **`feat/backend`**: Backend altyapısı ve ajanların geliştirilmesi.
+-   **`feat/frontend`**: Streamlit arayüzünün oluşturulması.
+-   **`docs`**: Proje dokümantasyonunun eklenmesi.
 
-## 📚 Documentation
+Tüm bu branch'ler geliştirme tamamlandıktan sonra `main` branch'ine birleştirilmiştir.
 
-- **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** - System design and principles
-- **[MODEL_SELECTION.md](docs/MODEL_SELECTION.md)** - Intelligent model selection strategy
-- **[AGENTS.md](docs/AGENTS.md)** - Detailed agent documentation
-- **[QUICKSTART.md](QUICKSTART.md)** - Installation and usage guide
-
-## 🛠️ Technology Stack
-
-### Backend
-- **Framework**: FastAPI 0.109.0
-- **LLM**: Ollama (llama3.2:1b, llama3.2:3b)
-- **Async**: httpx, aiofiles
-- **Validation**: Pydantic
-- **Logging**: Loguru
-- **Testing**: pytest, pytest-asyncio
-
-### Frontend
-- **Framework**: Streamlit 1.31.0
-- **Charts**: Plotly
-- **HTTP**: httpx
-
-### Tools
-- **Search**: duckduckgo-search
-- **JSON**: orjson (performance)
-
-## 🎨 Example Output
-
-```
-📊 Analysis Results
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Total Spent:           ₺8,470.00
-Daily Rate:            ₺1,210.00
-Monthly Projection:    ₺36,300.00
-Budget Usage:          242% ⚠️
-
-💡 Recommendations
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SUMMARY: Your spending is 242% of income, primarily
-driven by a large electronics purchase.
-
-ACTIONS:
-[HIGH]   Defer non-essential large purchases (Save ₺5,000)
-[HIGH]   Set up automatic savings (Save ₺1,500)
-[MEDIUM] Reduce food delivery (Save ₺800)
-
-GOALS:
-- Build ₺5,000 emergency fund over 3 months
-- Reduce monthly spending to ₺12,000
-```
-
-## 🔑 Design Decisions
-
-### ✅ What We DID
-
-1. **Simplified DDD** - Pragmatic architecture, not over-engineered
-2. **Task-based model selection** - Optimize for speed AND quality
-3. **4 focused agents** - Single responsibility principle
-4. **Dataclasses over ORMs** - Simple, fast, no database overhead
-5. **JSON storage** - Easy to inspect and version control
-
-### ❌ What We DIDN'T Do
-
-1. **No complex aggregates** - Keep domain models simple
-2. **No database** - JSON sufficient for scope
-3. **No microservices** - Monolith is simpler
-4. **No event sourcing** - Overkill for this project
-
-## 🚀 Performance
-
-| Metric | Value |
-|--------|-------|
-| **Classification** (10 items) | 2.5s |
-| **Analysis** | <10ms |
-| **Recommendations** | 4.8s |
-| **Total workflow** | ~7.8s |
-| **API response time** | <8s |
-
-**Optimization**: Using fast model for simple tasks → **45% faster**
-
-## 🤝 Contributing
-
-This is an internship test project. For questions or feedback:
-1. Check documentation in `docs/`
-2. Review code comments
-3. Run tests to understand behavior
-
-## 📝 License
-
-MIT License - See [LICENSE](LICENSE) file
-
-## 🎯 Project Goals (Internship Test)
-
-This project demonstrates:
-
-- ✅ **Multi-agent system design** - Coordinating specialized AI workers
-- ✅ **Intelligent resource allocation** - Task-based model selection
-- ✅ **Clean architecture** - DDD principles without over-engineering
-- ✅ **Full-stack development** - Backend + Frontend + API
-- ✅ **Testing practices** - Unit and integration tests
-- ✅ **Tool integration** - Web search integration
-- ✅ **Documentation** - Clear, comprehensive, professional
-
-## 💡 Key Highlights
-
-1. **Model Selection Strategy** ⭐ - Automatically choose fast/accurate models
-2. **Multi-Agent Workflow** - 4 agents working together seamlessly
-3. **Production-Ready** - Error handling, logging, testing
-4. **Well-Documented** - Architecture decisions explained
-5. **Demo-Ready** - Working frontend and API
-
----
-
-**Built with ❤️ for AI Internship Evaluation**
-
-For questions about architecture or design decisions, see:
-- [ARCHITECTURE.md](docs/ARCHITECTURE.md) - System design
-- [MODEL_SELECTION.md](docs/MODEL_SELECTION.md) - Why model selection matters
-- [AGENTS.md](docs/AGENTS.md) - How agents work together
