@@ -1,0 +1,18 @@
+{
+  "id": "23a5001f-3974-41be-a66f-eebeb25b0f10",
+  "total_expenses": 350.0,
+  "daily_rate": 50.0,
+  "monthly_projection": 1500.0,
+  "days_analyzed": 7,
+  "category_breakdown": {
+    "FOOD": 100.0
+  },
+  "budget_status": "HEALTHY",
+  "income": 15000.0,
+  "remaining_budget": 13500.0,
+  "usage_percentage": 10.0,
+  "trends": [
+    "🍔 FOOD harcamaları yüksek (%100.0)"
+  ],
+  "created_at": "2026-02-11T14:42:04.346569"
+}

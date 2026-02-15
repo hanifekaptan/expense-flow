@@ -1,0 +1,21 @@
+{
+  "id": "d3cb0497-43ff-4f73-b144-8d89f6dd0cce",
+  "total_expenses": 3450.0,
+  "daily_rate": 492.85714285714283,
+  "monthly_projection": 14785.714285714284,
+  "days_analyzed": 7,
+  "category_breakdown": {
+    "FOOD": 1050.0,
+    "UTILITIES": 2000.0,
+    "EDUCATION": 400.0
+  },
+  "budget_status": "WARNING",
+  "income": 15000.0,
+  "remaining_budget": 214.28571428571558,
+  "usage_percentage": 98.57142857142857,
+  "trends": [
+    "🍔 FOOD harcamaları yüksek (1050 TL, %30.4)",
+    "💡 UTILITIES harcamaları yüksek (2000 TL, %58.0)"
+  ],
+  "created_at": "2026-02-11T15:39:56.844503"
+}

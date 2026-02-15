@@ -1,0 +1,22 @@
+{
+  "id": "85e55510-1b36-4d6a-8b3a-12a16259cbc4",
+  "total_expenses": 14100.0,
+  "daily_rate": 2014.2857142857142,
+  "monthly_projection": 60428.57142857143,
+  "days_analyzed": 7,
+  "category_breakdown": {
+    "FOOD": 100.0,
+    "UTILITIES": 5000.0,
+    "SHOPPING": 7000.0,
+    "EDUCATION": 2000.0
+  },
+  "budget_status": "OVER_BUDGET",
+  "income": 30000.0,
+  "remaining_budget": 0,
+  "usage_percentage": 201.42857142857142,
+  "trends": [
+    "💡 UTILITIES harcamaları yüksek (5000 TL, %35.5)",
+    "🛍️ SHOPPING harcamaları yüksek (7000 TL, %49.6)"
+  ],
+  "created_at": "2026-02-11T17:31:06.646492"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "52f4ac39-75d0-4205-8ac2-d8881f280adb",
+  "total_expenses": 2408.98,
+  "daily_rate": 344.14,
+  "monthly_projection": 10324.199999999999,
+  "days_analyzed": 7,
+  "category_breakdown": {
+    "FOOD": 760.0,
+    "EDUCATION": 450.0,
+    "ENTERTAINMENT": 204.98000000000002,
+    "TRANSPORT": 95.0,
+    "SHOPPING": 899.0
+  },
+  "budget_status": "HEALTHY",
+  "income": 15000.0,
+  "remaining_budget": 4675.800000000001,
+  "usage_percentage": 68.82799999999999,
+  "trends": [
+    "🍔 FOOD spending is high (760 TL, 31.5%)",
+    "🛍️ SHOPPING spending is high (899 TL, 37.3%)"
+  ],
+  "created_at": "2026-02-13T22:32:24.571751"
+}
